@@ -10,7 +10,7 @@
 This directory contains traces of allocate and free requests that are
 used by the test harness to evaluate the student malloc packages.
 
-*********
+*********	
 1. Files
 *********
 
