@@ -8,8 +8,16 @@
 
 ## 🔹 점수 변화 요소
 1. **배치 정책(Placement Policy)**  
+  - First Fit
+  - Next fit
+  - Best fit
 2. **병합 정책(Coalescing Policy)**  
+  - 즉시 병합
+  - 지연 병합
 3. **가용 리스트(Free List) 방식**
+  - Implicit 
+  - Explicit 
+  - Segreated 
 
 ---
 
