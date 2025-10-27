@@ -63,15 +63,17 @@
 
 ## 4️⃣ 명시적 가용 리스트(LIFO) + free list 안에서 first fit (LIFO) + 즉시 병합 + Footer 최적화
 - **로직 생각**:  
-  - free 공간에 할당할 때, PRED, SUCC, FOOTER 다 뺀 payload 공간 제공 -> 할당 시 footer 크기도 payload로 생각해야됨 payload = GET(HDRP(bp)) - WSIZE 일때 할당돼야함.
-  - 현재 블록 헤더에 앞 블록 할당 되었는지 안됐는지 판단하는 비트도 넣어줘야함 (제일 끝 - 현재 블록 할당?, 마지막에서 2번째 - 이전 블록 할당?)
-  - 병합시에도 헤더 보고 앞 블록 할당? 비할당? 판단 
+  - free 공간에 할당할 때, PRED, SUCC, FOOTER 다 뺀 payload 공간 제공 -> 할당 시 footer 크기도 payload로 생각해야됨 payload = GET(HDRP(bp)) - WSIZE 일때 할당돼야함. 
+  - 현재 블록 헤더에 앞 블록 할당 되었는지 안됐는지 판단하는 비트도 넣어줘야함 (제일 끝 - 현재 블록 할당?, 마지막에서 2번째 - 이전 블록 할당?) 
+  - 병합시에도 헤더 보고 앞 블록 할당? 비할당? 판단  
 - **점수 구분**: 
-  - 42 (utils) + 40 (thru)
-  - **총합 : 82 ~ 83 / 100**
+  - 42 (utils) + 40 (thru) 
+  - **총합: 82 ~ 83 / 100** 
 
 ---
 
-## 5️⃣ 분리 가용 리스트(Segregated) + size class 안에서 first fit + 즉시 병합 + Footer 최적화
+## 5️⃣ 분리 가용 리스트(Segregated) + size class 안에서 first fit + 즉시 병합 + Footer 최적화 
+- **로직 생각**:
+  -   
 
 
