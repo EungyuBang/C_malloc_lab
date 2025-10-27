@@ -19,7 +19,7 @@
 3. **가용 리스트(Free List) 방식**
   - Implicit 
   - Explicit 
-  - Segreated 
+  - Segregated 
 
 ---
 
@@ -47,7 +47,7 @@
 
 ---
 
-## 3️⃣ 명시적 가용 리스트(LIFO) + free list 안에서 first fit + 즉시 병합
+## 3️⃣ 명시적 가용 리스트(LIFO) + free list 안에서 first fit (LIFO) + 즉시 병합
 - **explicit.c**
 - **로직 생각**
   - 연결 방법 -> LIFO, 주소 순서 방식 있음  - 우선 LIFO 로 구현
@@ -55,16 +55,23 @@
   - 그 다음 insert_free_list , delete_free_list 만들어서 free 할때 insert_free_list 해야되고, 할당될때 delete_free_list 만들어야 함
   - 그리고 Next Fit 필요 없음 -> 어차피 가용된 애들만 따로 관리하기 때문에 그 안에서 적합한거 바로 할당해도 됨
   - LIFO 로 구현할거니까... free list 맨 앞에 제일 최근 free된 블록 삽입
-- **점수 예상**: TBD
+- **점수 구분**: 
+  - 42 (utils) + 40 (thru) 
+  - **총합: 82 ~ 83 / 100**
 
 ---
 
-## 4️⃣ 명시적 가용 리스트 + free list 안에서 first fit + 즉시 병합 + Footer 최적화
-- **장점**:  
-  - Footer 접근 최소화 → Overhead 감소  
-  - 병합/검색 효율 향상  
-- **점수 예상**: TBD
+## 4️⃣ 명시적 가용 리스트(LIFO) + free list 안에서 first fit (LIFO) + 즉시 병합 + Footer 최적화
+- **로직 생각**:  
+  - free 공간에 할당할 때, PRED, SUCC, FOOTER 다 뺀 payload 공간 제공 -> 할당 시 footer 크기도 payload로 생각해야됨 payload = GET(HDRP(bp)) - WSIZE 일때 할당돼야함.
+  - 현재 블록 헤더에 앞 블록 할당 되었는지 안됐는지 판단하는 비트도 넣어줘야함 (제일 끝 - 현재 블록 할당?, 마지막에서 2번째 - 이전 블록 할당?)
+  - 병합시에도 헤더 보고 앞 블록 할당? 비할당? 판단 
+- **점수 구분**: 
+  - 42 (utils) + 40 (thru)
+  - **총합 : 82 ~ 83 / 100**
 
 ---
+
+## 5️⃣ 분리 가용 리스트(Segregated) + size class 안에서 first fit + 즉시 병합 + Footer 최적화
 
 
