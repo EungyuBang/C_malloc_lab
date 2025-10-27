@@ -4,15 +4,15 @@
 #include <unistd.h>
 #include <string.h>
 
-#include "mm.h"
-#include "memlib.h"
+// #include "mm.h"
+// #include "memlib.h"
 
-team_t team = {
-    "6조",
-    "BANG",
-    "BANG",
-    "",
-    ""};
+// team_t team = {
+//     "6조",
+//     "BANG",
+//     "BANG",
+//     "",
+//     ""};
 
 #define ALIGNMENT 8
 
