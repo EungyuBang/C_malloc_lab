@@ -221,7 +221,7 @@ static void* find_fit(size_t asize){
         }
         // 현재 리스트(i)에 적합한 블록이 없으면 다음 (더 큰) 리스트(i+1)로
     }
-    
+
     return NULL; // 모든 리스트를 찾아봤지만 적합한 블록 없음
 }
 

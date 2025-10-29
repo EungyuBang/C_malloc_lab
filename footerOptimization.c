@@ -65,6 +65,9 @@ static void* free_listp; // 명시적 가용 리스트의 시작점
 // MIN_BLOCK_SIZE: 가용 블록은 헤더, 푸터, pred, succ 필요
 #define MIN_BLOCK_SIZE (DSIZE + 2 * P_SIZE)
 
+
+
+
 // --- 명시적 가용 리스트 함수 ---
 static void insert_free_block(void *bp){ // LIFO 삽입
     void *succ = free_listp;
